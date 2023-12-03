@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\KegiatanController;
 
@@ -24,7 +25,7 @@ Route::get('/', function () {
 Route::get('agenda', [AgendaController::class, 'index']);
 
 Route::resource('guru', GuruController::class);
+Route::resource('agenda', AgendaController::class);
+Route::resource('kelas', KelasController::class);
 
 Route::get('login', [UsersController::class, 'index']);
-
-Route::get('kegiatan', [KegiatanController::class, 'index']);

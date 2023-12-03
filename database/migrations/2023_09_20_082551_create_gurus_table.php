@@ -16,7 +16,8 @@ return new class extends Migration
             $table->integer('nip')->unique();
             $table->string('nama_guru');
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->string('Tempat_Tanggal_Lahir');
+            $table->string('Tempat_Lahir');
+            $table->string('Tanggal_Lahir');
             $table->text('Alamat');
             $table->enum('Agama', ['islam', 'kristen', 'hindu', 'budha']);
             $table->string('Email');
