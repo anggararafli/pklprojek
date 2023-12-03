@@ -196,6 +196,12 @@
                                     <span key="t-Absent">Agenda Guru</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{url('kelas')}}">
+                                    <i class="mdi mdi-account-box-multiple"></i>
+                                    <span key="t-Absent">Kelas</span>
+                                </a>
+                            </li>
                         </a>
                         </ul>
                     </div>

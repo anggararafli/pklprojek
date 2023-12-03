@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\guru;
+use App\Models\kelas;
 
-class GuruController extends Controller
+class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $guru = guru::all();
-        return view('guru.index', compact('guru'));
+        $kelas = kelas::all();
+        return view('kelas.index', compact('kelas'));
     }
 
     /**
@@ -21,7 +21,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        return view('guru.create');
+        return view('kelas.create');
     }
 
     /**
@@ -29,10 +29,8 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);
-        $data['password_guru'] = bcrypt($data['password_guru']);
-        guru::create($data);
-        return redirect()->route('guru.index');
+        kelas::create($request->except(['_token']));
+        return redirect()->route('kelas.index');
     }
 
     /**
@@ -48,8 +46,8 @@ class GuruController extends Controller
      */
     public function edit(string $id)
     {
-        $guru = guru::find($id);
-        return view('guru.edit', compact('guru'));
+        $kelas = kelas::find($id);
+        return view('kelas.edit', compact('kelas'));
     }
 
     /**
@@ -57,9 +55,9 @@ class GuruController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $guru = guru::find($id);
-        $guru->update($request->except(['_token']));
-        return redirect()->route('guru.index');   
+        $kelas = kelas::find($id);
+        $kelas->update($request->except(['_token']));
+        return redirect()->route('kelas.index');   
     }
 
     /**
@@ -67,7 +65,7 @@ class GuruController extends Controller
      */
     public function destroy(string $id)
     {
-        guru::find($id)->delete();
-        return redirect()->route('guru.index');
+        kelas::find($id)->delete();
+        return redirect()->route('kelas.index');
     }
 }
