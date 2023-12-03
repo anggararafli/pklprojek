@@ -18,9 +18,9 @@ use App\Http\Controllers\KegiatanController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UsersController::class, 'index'])->name('login');
+
+Route::post('/postlogin', [UsersController::class, 'login'])->name('postlogin');
 
 Route::get('agenda', [AgendaController::class, 'index']);
 
